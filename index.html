@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>ID Card Scanner</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 col-12 bg-white text-center vh-100">
+        <h2 class="text-center my-4 fw-bold">Student ID Scanner</h2>
+        <div id="webcam-container" class="text-center rounded-5 d-flex justify-content-center align-items-center"></div>
+        <div class="d-grid m-4">
+          <button type="button" class="btn btn-dark mb-4 rounded-5 fw-medium" onclick="toggleScan()">
+            <i class="bi bi-person-badge"></i>
+            Scan ID
+          </button>          
+        </div>
+      </div>
+      <div class="col-3 d-md-block d-none" id="label-container-col">
+        <div id="label-container"></div>
+      </div>      
+    </div>
+  </div>
+
+  <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title d-flex align-items-center gap-2" id="resultModalLabel">Attendance Result <span class="badge bg-success">Present</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeModalButton"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Result content will be displayed here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
